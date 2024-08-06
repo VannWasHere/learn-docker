@@ -8,7 +8,7 @@
 - Backend Private Access (Only can be accessed by frontend)
 3. Using persistance volume for prevent lost data when docker got shut
 4. Build using docker compose
-* Stage:
+### Stage:
 - Build
 - Image
 - Network
