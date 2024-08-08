@@ -6,4 +6,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "1234:1235"
-    
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
