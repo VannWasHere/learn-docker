@@ -1,6 +1,9 @@
 import Pocketbase from 'pocketbase';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+
+    const navigate = useNavigate()
 
     const pb = new Pocketbase(import.meta.env.VITE_POCKETBASE)
 
@@ -13,6 +16,7 @@ const LoginPage = () => {
         }
         finally {
             console.log(response);
+            navigate('/')
         }
     }
 

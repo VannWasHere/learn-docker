@@ -1,18 +1,28 @@
 version: '3'
 services:
   frontend:
-    build: 
+    build:
       context: ./Frontend
       dockerfile: Dockerfile
     ports:
       - "1234:1235"
+    networks:
+      - private-network
+
   backend:
     build:
       context: ./Backend
       dockerfile: Dockerfile
-    ports:
-      - "8090:8090"
+    # ports:
+    #   - "8090:8090"
     volumes:
       - pocketbase-data:/pb/pb_data
+    networks:
+      - private-network
+
 volumes:
   pocketbase-data:
+
+networks:
+  private-network:
+    driver: bridge
