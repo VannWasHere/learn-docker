@@ -12,3 +12,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8090:8090"
+    volumes:
+      - pocketbase-data:/pb/pb_data
+volumes:
+  pocketbase-data:
