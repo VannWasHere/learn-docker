@@ -11,9 +11,7 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async() => {
       try {
-      const records = await pb.collection('users').getFullList({
-        sort: '-created',
-      });
+      const records = await pb.collection('users').getFullList();
         setUserList(records)
         console.log(userList);
       } catch (err) {

@@ -7,9 +7,10 @@ services:
     container_name: pocketbase
     networks:
       - internal
+    ports:
+      - "8090:8090"
     volumes:
-      - pb_data:/pb/pb_data
-    restart: unless-stopped
+      - pocketbase-data:/pb/pb_data
 
   frontend:
     build: ./frontend
@@ -20,9 +21,6 @@ services:
     networks:
       - internal
       - public
-    environment:
-      - VITE_POCKETBASE=http://pocketbase-backend:8090
-    restart: unless-stopped
 
 networks:
   internal:
@@ -31,4 +29,4 @@ networks:
     driver: bridge
 
 volumes:
-  pb_data:
+  pocketbase-data:
