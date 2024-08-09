@@ -1,7 +1,7 @@
 
 interface ItemValue {
     item: {
-        id: number
+        id: string
     }
 }
 
